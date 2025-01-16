@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Work Order Submission</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <img src="./assets/img/logo.png" alt="Wellesley Logo" class="img-fluid" style="width: 80px;">
+            <a class="navbar-brand" href="index.html" style="color: #0047AB; font-size: 24px;">Wellesley Work Orders</a>
+            <a class="btn btn-primary" href="#!" style="background-color: #0047AB; border-color: #0047AB;">Sign In</a>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-5" style="margin-bottom: 10px;">Submit Work Order</h1>
+                        <p style="line-height: 1.5; font-size: 18px; margin: 0;">
+                            Fill out the form below to submit your work order request. Required fields are marked with an asterisk (*).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Form Section -->
+    <section class="form-section bg-light py-5">
+        <div class="container">
+            <form>
+                <div class="mb-3">
+                    <label for="requestorName" class="form-label">Requestor Name *</label>
+                    <input type="text" class="form-control" id="requestorName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="requestType" class="form-label">Request Type *</label>
+                    <select class="form-select" id="requestType" required>
+                        <option value="" selected disabled>Select type</option>
+                        <option value="dorm">Dorm</option>
+                        <option value="common_space">Common Space</option>
+                        <option value="building">Building</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location *</label>
+                    <input type="text" class="form-control" id="location" placeholder="Enter the location" required>
+                </div>
+                <div class="mb-3">
+                    <label for="buildingFloor" class="form-label">Building Floor *</label>
+                    <input type="text" class="form-control" id="buildingFloor" placeholder="Enter the floor number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="actionRequested" class="form-label">Action Requested *</label>
+                    <textarea class="form-control" id="actionRequested" rows="3" placeholder="Describe the action needed" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="pictureUpload" class="form-label">Add a Picture (Optional)</label>
+                    <input type="file" class="form-control" id="pictureUpload">
+                </div>
+                <button type="submit" class="btn btn-primary" style="background-color: #0047AB; border-color: #0047AB;">Submit Request</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; 2025 Wellesley Work Orders. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#!">Privacy</a></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
