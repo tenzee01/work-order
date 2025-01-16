@@ -602,6 +602,21 @@ progress {
   height: auto;
 }
 
+.testimonial-item {
+  text-align: center; /* Ensures everything inside is centered */
+}
+
+.testimonial-item img {
+  width: 150px; /* Consistent width */
+  height: 150px; /* Consistent height */
+  object-fit: cover; /* Maintain proportionality */
+  display: block; /* Ensures no extra spacing */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+h5 {
+  white-space: nowrap; /* Prevents wrapping to a new line */
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -4445,6 +4460,7 @@ textarea.form-control-lg {
 
 .accordion-body {
   padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+  font-size: 0.875rem;
 }
 
 .accordion-flush .accordion-collapse {
