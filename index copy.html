@@ -14,13 +14,69 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+            }
+            .faq-container {
+                max-width: 600px;
+                margin: 20px auto;
+                padding: 20px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .faq-item {
+                margin-bottom: 10px;
+            }
+            .faq-question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                background: #f0f0f0;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            .faq-question:hover {
+                background: #e0e0e0;
+            }
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0 10px;
+                font-size: 14px;
+                color: #333;
+                background: #f9f9f9;
+                border-left: 2px solid #007BFF;
+            }
+            .faq-answer.open {
+                max-height: 150px;
+                padding: 10px 10px;
+            }
+            .toggle-icon {
+                font-size: 18px;
+                transition: transform 0.3s ease;
+            }
+            .toggle-icon.open {
+                transform: rotate(45deg);
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <img src="./assets/img/logo.png"alt="Wellesley Logo" class="img-fluid" style="width: 80px;">
-                <a class="navbar-brand" href="#!" style="color: #0047AB; font-size: 24px;">Wellesley Work Orders</a>
+                <a class="navbar-brand" href="#!" style="color: #0047AB; font-size: 24px; font-weight: bold;">Wellesley Work Orders</a>
+                
+                
                 <a class="btn btn-primary" href="#signup" style="background-color: #0047AB; border-color: #0047AB;">Sign In</a>
             </div>
         </nav>
@@ -32,11 +88,11 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="mb-5"  style="margin-bottom: 10px;">Service Requests</h1>
-                        
                             <p style="line-height: 1.5; font-size: 18px; margin: 0;">
                                 <span>To ensure a quick response to your request, please submit your work order using your Wellesley credentials.</span> 
                                 <span style="display: block; margin-top: 8px;"><strong>Note:</strong> Service requests must be submitted using an on-campus internet connection.</span>
-                              </p>
+                            </p>
+
 
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -50,25 +106,32 @@
   <section class="features-icons text-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
                     <h3>Create Request</h3>
                     <p class="lead mb-0"> Create a new request</p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 ">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
                     <h3>My Requests</h3>
                     <p class="lead mb-0">Search and view your requests</p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 ">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
                     <h3>Search Requests</h3>
                     <p class="lead mb-0"> Search all requests</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-play-btn m-auto text-primary"></i></div>
+                    <h3>Video Tutorial</h3>
+                    <p class="lead mb-0">Quick tutorial on how to leave the requests</p>
                 </div>
             </div>
         </div>
@@ -84,6 +147,7 @@
                 </div>
             </div>
         </header>
+  
    
         <!-- Image Showcases-->
         <!-- <section class="showcase">
@@ -130,7 +194,7 @@
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="assets\img\campus police-2.jpg" alt="..." />
                             <h5>Non-Emergency Campus Police</h5>
-                            <p class="font-weight-light mb-0"> Number: 781-283-2121, or 2121 from a campus phone</p>
+                            <p class="font-weight-light mb-0">Number: 781-283-2121, or 2121 from a campus phone</p>
                             <p class="font-weight-light mb-0"></p>
                         </div>
                     </div>
@@ -150,26 +214,36 @@
         <section class="call-to-action text-white text-center" id="signup">
             <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                        <!-- Signup form-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                            </div>
+                    <div class="col-xl-6" >
+                        <h2 class="mb-4"  href="#!" style="color: #0047AB; font-size: 24px;">FAQs</h2>
+
+                        <div class="faq-item href="#!" style="color: #0047AB;">
+                            <div class="faq-question">
+                            <span>What is this website about?</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            This website provides a platform for students to submit service requests easily and track their status.
+                        </div>
+                    </div>
+                    <div class="faq-item href="#!" style="color: #0047AB;">
+                        <div class="faq-question">
+                            <span>How do I submit a request?</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            You can submit a request by clicking the "Submit Request" button on the homepage and filling out the form.
+                        </div>
+                    </div>
+                    <div class="faq-item href="#!" style="color: #0047AB;">
+                        <div class="faq-question">
+                            <span>Who can I contact for support?</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            For support, you can contact our helpdesk at support@example.com or call (123) 456-7890.
+                        </div>
+                        
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -190,6 +264,16 @@
                     </div>
                 </div>
             </div>
+            <script>
+                document.querySelectorAll('.faq-question').forEach(question => {
+                    question.addEventListener('click', () => {
+                        const answer = question.nextElementSibling;
+                        const icon = question.querySelector('.toggle-icon');
+                        answer.classList.toggle('open');
+                        icon.classList.toggle('open');
+                    });
+                });
+            </script>
         </section>
         <!-- Footer-->
         <footer class="footer bg-light">
