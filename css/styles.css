@@ -10932,3 +10932,20 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+          /* Ensure form elements are on new lines */
+          form label, form input, form textarea, form #ratingStars {
+              display: block;
+              margin-bottom: 10px;
+          }
+
+          /* Optional: styling for the rating stars */
+          #ratingStars span {
+              cursor: pointer;
+              margin-right: 5px;
+          }
+
+          /* Optional: styling for selected stars */
+          #ratingStars span.selected {
+              color: gold;
+          }
