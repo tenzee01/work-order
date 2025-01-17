@@ -67,6 +67,87 @@
             .toggle-icon.open {
                 transform: rotate(45deg);
             }
+
+            header {
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            }
+
+            /* Feedback button styles */
+            #feedbackButton {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            }
+
+            /* Feedback pop-up styles */
+            #feedbackPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            }
+
+            .popupContent {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            width: 500px;
+            height: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-direction: column; 
+            gap: 15px;
+            overflow: hidden; 
+            }
+
+            #closePopup {
+            font-size: 20px;
+            font-weight: bold;
+            float: right;
+            cursor: pointer;
+            }
+
+            #ratingStars span {
+            font-size: 25px;
+            cursor: pointer;
+            color: #ccc;
+            }
+
+            #ratingStars span.selected,
+            #ratingStars span:hover,
+            #ratingStars span:hover ~ span {
+            color: #ffc107;
+            }
+
+            textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 15px;
+            }
+
+            button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            }
+        
         </style>
     </head>
     <body>
@@ -356,4 +437,95 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+            <body>
+                <!-- Existing Page Content -->
+                <header>
+                <h1>Welcome to My Page</h1>
+                <p>Click the Feedback button to provide your input!</p>
+                </header>
+            
+                <!-- Feedback Button -->
+                <button id="feedbackButton" style="background-color: #0047AB; border-color: #0047AB; border: none; font-size: 18px; cursor: pointer; transition: background-color 0.3s; height: 100px; width: 60px; display: flex; justify-content: center; align-items: center;">Feedback</button>
+            
+                <!-- Feedback Pop-up -->
+                <div id="feedbackPopup">
+                <div class="popupContent">
+                    <span id="closePopup">&times;</span>
+                    <h3>We'd love to hear from you!</h3>
+                    <form id="feedbackForm">
+                    <label for="name">Name (optional):</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+            
+                    <label for="email">Email (optional):</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email">
+            
+                    <label>Rating:</label>
+                    <div id="ratingStars">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                    </div>
+            
+                    <label for="feedback">Comments/Suggestions:</label>
+                    <textarea id="feedback" name="feedback" placeholder="Your feedback here"></textarea>
+            
+                    <button type="submit" style="background-color: #0047AB; border-color: #0047AB; border-radius: 12px; padding: 10px 20px; display: block; margin: 0 auto;">Submit</button>
+                    </form>
+                </div>
+                </div>
+            
+                <!-- JavaScript -->
+                <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const feedbackButton = document.getElementById("feedbackButton");
+                    const feedbackPopup = document.getElementById("feedbackPopup");
+                    const closePopup = document.getElementById("closePopup");
+                    const ratingStars = document.querySelectorAll("#ratingStars span");
+            
+                    // Show feedback pop-up
+                    feedbackButton.addEventListener("click", () => {
+                    feedbackPopup.style.display = "flex";
+                    });
+            
+                    // Hide feedback pop-up
+                    closePopup.addEventListener("click", () => {
+                    feedbackPopup.style.display = "none";
+                    });
+            
+                    // Rating functionality
+                    ratingStars.forEach((star) => {
+                    star.addEventListener("click", () => {
+                        ratingStars.forEach((s) => s.classList.remove("selected"));
+                        star.classList.add("selected");
+                        const ratingValue = star.getAttribute("data-value");
+                        console.log("Selected rating:", ratingValue);
+                    });
+                    });
+            
+                    // Submit feedback form
+                    const feedbackForm = document.getElementById("feedbackForm");
+                    feedbackForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const feedback = document.getElementById("feedback").value;
+                    const rating = document.querySelector("#ratingStars span.selected")
+                        ? document.querySelector("#ratingStars span.selected").getAttribute("data-value")
+                        : null;
+            
+                    console.log({
+                        name,
+                        email,
+                        rating,
+                        feedback,
+                    });
+            
+                    alert("Thank you for your feedback!");
+                    feedbackPopup.style.display = "none";
+                    });
+                });
+                </script>
+            </body>
 </html>
