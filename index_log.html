@@ -16,6 +16,18 @@
         <link href="css/styles.css" rel="stylesheet" />
 
         <style>
+          
+            .navbar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+                z-index: 10; /* Ensures it overlays the image */
+                padding: 28px 20px;
+                border: none;
+                box-shadow: none; /* Remove any default shadow */
+            }
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
@@ -71,10 +83,11 @@
     </head>
     <body>
         <!-- Navigation from forms.html -->
-        <nav class="navbar navbar-light bg-light static-top">
+        <nav class="navbar navbar-light">
             <div class="container">
-                <img src="./assets/img/logo.png" alt="Wellesley Logo" class="img-fluid" style="width: 80px;">
-                <a class="navbar-brand" href="#!" style="color: #0047AB; font-size: 24px;">Wellesley Work Orders</a>
+                <a href="index copy.html">
+                    <img src="./assets/logoW.png" alt="Wellesley Logo" class="img-fluid" style="width: 370px; margin-left: -40px;">
+                </a>
                 <a class="btn btn-primary" href="index copy.html" style="background-color: #0047AB; border-color: #0047AB;">Sign Out</a>
             </div>
         </nav>

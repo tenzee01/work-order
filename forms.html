@@ -14,16 +14,36 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <style>            
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+        z-index: 10; /* Ensures it overlays the image */
+        padding: 28px 20px;
+        border: none;
+        box-shadow: none; /* Remove any default shadow */
+    }
+        
+    </style>
+
+
+
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
+    <nav class="navbar navbar-light">
         <div class="container">
-            <img src="./assets/img/logo.png" alt="Wellesley Logo" class="img-fluid" style="width: 80px;">
-            <a class="navbar-brand" href="index copy.html" style="color: #0047AB; font-size: 24px;">Wellesley Work Orders</a>
-            <a class="btn btn-primary" href="index copy.html" style="background-color: rgb(248 249 250); border-color: rgb(248 249 250);">Sign In</a>
+            <a href="index copy.html">
+                <img src="./assets/logoW.png" alt="Wellesley Logo" class="img-fluid" style="width: 370px; margin-left: -40px;">
+            </a>
+            <a class="btn btn-primary" href="index copy.html" style="background-color: #0047AB; border-color: #0047AB;">Sign In</a>
         </div>
     </nav>
+
     <!-- Header -->
     <header class="masthead">
         <div class="container position-relative">
