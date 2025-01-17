@@ -16,3 +16,7 @@ Our project aims to address the issue of the inaccessibility of Wellesley's work
 - **Voiceflow**  
 - **HTML**  
 - **CSS**  
+
+
+## 👩‍🎨 Low Fidelity Wireframes
+![wireframes](./wireframesjpg.jpg)
